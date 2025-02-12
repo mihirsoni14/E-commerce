@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->integer('category_id');
             $table->integer('sub_category_id');
             $table->decimal('price', 8, 2);
-            $table->decimal('discount_price', 8, 2);
+            $table->decimal('discount_price', 8, 2)->nullable();
             $table->text('description');
             $table->string('images')->nullable();
             $table->timestamps();

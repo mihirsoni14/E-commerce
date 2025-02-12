@@ -14,7 +14,7 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         // Category::truncate();
-        $Catagory = ['Electronics', 'Fashion', 'Automotive', 'Groceries', 'Others'];
+        $Catagory = ['Fruits', 'Vegetables', 'Bakery', 'Dairy'];
 
         foreach ($Catagory as $val) {
             Category::firstOrCreate([

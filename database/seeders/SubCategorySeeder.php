@@ -18,11 +18,10 @@ class SubCategorySeeder extends Seeder
     {
         // SubCategory::truncate();
         $sub_catagory = [
-            'Electronics' => ['mobile', 'laptop', 'tablet', 'camera', 'headphone', 'speaker', 'watch', 'accessories'],
-            'Fashion' => ['men', 'women', 'kids', 'footwear', 'accessories', 'jewelry', 'bags', 'watches'],
-            'Automotive' => ['car', 'bike', 'accessories', 'tools', 'lubricants', 'tyres', 'helmet', 'riding gear'],
-            'Groceries' => ['fruits', 'vegetables', 'dairy', 'beverages', 'snacks', 'household', 'personal care', 'baby care'],
-            'Others' => ['books', 'stationary', 'gifts', 'toys', 'sports', 'fitness', 'home', 'kitchen'],
+            'Fruits' => ['Fresh Fruits', 'Citrus Fruits', 'Berries Fruits', 'Tropical Fruits', 'Dried Fruits'],
+            'Vegetables' => ['Leafy Vegetables', 'Root Vegetables', 'Mushrooms', 'Peppers & Chilies', 'Cruciferous Vegetables'],
+            'Bakery' => ['Breads', 'Cookies', 'Biscuits'],
+            'Dairy' => ['Milk', 'Cheese', 'Butter', 'Yogurt', 'Desserts'],
         ];
 
         foreach ($sub_catagory as $key => $value) {

@@ -8,11 +8,8 @@ use App\Http\Middleware\AuthMiddleware;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('getProduct', [HomeController::class, 'getProduct'])->name('getProduct');
-
-Route::get('/shop', function () {
-    return view('shop');
-})->name('shop');
+Route::get('/shop', [HomeController::class, 'shop'])->name('shop');
+;
 
 Route::get('/cart', function () {
     return view('cart');
@@ -25,10 +22,6 @@ Route::get('/checkout', function () {
 Route::get('/testimonial', function () {
     return view('testimonial');
 })->name('testimonial');
-
-Route::get('/shop', function () {
-    return view('shop');
-})->name('shop');
 
 Route::get('/product-details', function () {
     return view('product-details');
