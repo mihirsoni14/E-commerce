@@ -9,11 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/shop', [HomeController::class, 'shop'])->name('shop');
-;
 
-Route::get('/cart', function () {
-    return view('cart');
-})->name('cart');
 
 Route::get('/checkout', function () {
     return view('checkout');
@@ -60,11 +56,14 @@ Route::middleware(AuthMiddleware::class)->group(function () {
         return view('Unauthorized');
     })->name('login');
 
+    Route::get('/cart', [ProductController::class, 'cart'])->name('cart');
+    Route::get('/cartupdate', [ProductController::class, 'cartUpdate'])->name('cart.update');
     Route::get('users/list', [UserController::class, 'index'])->name('users.list');
     Route::get('product/list', [ProductController::class, 'index'])->name('product.list');
     Route::get('product/create', [ProductController::class, 'create'])->name('product.create');
     Route::post('product/store', [ProductController::class, 'store'])->name('product.store');
     Route::post('product/addToCart', [ProductController::class, 'addtocart'])->name('addtocart');
+
 });
 
 

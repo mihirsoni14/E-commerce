@@ -73,4 +73,15 @@ class ProductController extends Controller
             return response()->json(['message' => "Item already exist", 'count' => $count]);
         }
     }
+    public function cart()
+    {
+        $items = Cart::where('user_id', Auth::id())->get();
+        return view('cart', compact('items'));
+    }
+    public function cartUpdate()
+    {
+
+    }
+
+
 }
