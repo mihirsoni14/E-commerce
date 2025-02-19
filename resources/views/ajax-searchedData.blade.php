@@ -27,8 +27,9 @@
                 <div class="d-flex justify-content-between flex-lg-wrap">
                     <p class="text-dark fs-5 fw-bold mb-0"> ${{$product->price}}</p>
                     <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
-                        class="btn border border-secondary rounded-pill px-3 text-primary"><i
-                            class="fa fa-shopping-bag me-2 text-primary add_to_cart" data-prod_id="{{$product->id}}"></i>
+                        class="btn border border-secondary rounded-pill px-3 text-primary add_to_cart"
+                        data-product-id="{{$product->id}}"><i class="fa fa-shopping-bag me-2 text-primary add_to_cart"
+                            data-prod_id="{{$product->id}}"></i>
                         Add to
                         cart</a>
                 </div>

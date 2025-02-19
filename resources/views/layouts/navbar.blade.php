@@ -1,4 +1,11 @@
 <!-- Navbar start -->
+
+@php
+    use App\Models\Cart;
+    $count = Cart::where('user_id', Auth::user()->id)->count();
+@endphp
+
+
 <div class="container-fluid fixed-top">
     <div class="container topbar bg-primary d-none d-lg-block">
         <div class="d-flex justify-content-between">
@@ -46,8 +53,8 @@
                     <a href="#" class="position-relative me-4 my-auto">
                         <i class="fa fa-shopping-bag fa-2x"></i>
                         <span
-                            class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                            style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
+                            class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1 cart_cont"
+                            style="top: -5px; left: 15px; height: 20px; min-width: 20px;">{{$count}}</span>
                     </a>
                     <a href="#" class="my-auto">
                         <i class="fas fa-user fa-2x"></i>

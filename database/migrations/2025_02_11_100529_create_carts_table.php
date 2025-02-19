@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->integer('user_id');
             $table->integer('product_id');
-            $table->integer('quantity');
+            $table->integer('quantity')->default(1);
             $table->timestamps();
         });
     }

@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Process;
 
 class ProductController extends Controller
@@ -46,11 +48,29 @@ class ProductController extends Controller
             unset($validate['image']);
         }
 
-
-
         Product::create($validate);
         return redirect()->route('dashbord');
 
 
+    }
+
+    public function addtocart(Request $request)
+    {
+        $id = $request->product_id;
+        $filter = Cart::where('user_id', Auth::user()->id)->where('product_id', $id)->first();
+        $count = Cart::where('user_id', Auth::user()->id)->count();
+
+
+        if (!$filter) {
+            $data = Cart::create([
+                'user_id' => Auth::user()->id,
+                'product_id' => $id,
+            ]);
+
+            $count = Cart::where('user_id', Auth::user()->id)->count();
+            return response()->json(['message' => "Add to cart successfully", 'count' => $count]);
+        } else {
+            return response()->json(['message' => "Item already exist", 'count' => $count]);
+        }
     }
 }

@@ -24,12 +24,12 @@
                                 <img src="img/hero-img-1.png" class="img-fluid w-100 h-100 bg-secondary rounded"
                                     alt="First slide">
                                 <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
-                                    class="btn px-4 py-2 text-white rounded">Fruites</a>
+                                    class="add_to_carti btn px-4 py-2 text-white rounded">Fruites</a>
                             </div>
                             <div class="carousel-item rounded">
                                 <img src="img/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
                                 <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
-                                    class="btn px-4 py-2 text-white rounded">Vesitables</a>
+                                    class="add_to_carti btn px-4 py-2 text-white rounded">Vesitables</a>
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselId"
@@ -207,7 +207,7 @@
                         <p class="mb-4 text-dark">The generated Lorem Ipsum is therefore always free from repetition
                             injected humour, or non-characteristic words etc.</p>
                         <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
-                            class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">BUY</a>
+                            class="add_to_carti banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">BUY</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -245,7 +245,8 @@
                                 <img src="img/best-product-1.jpg" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-6">
-                                <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}" class="h5">Organic
+                                <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
+                                    class="add_to_carti h5">Organic
                                     Tomato</a>
                                 <div class="d-flex my-3">
                                     <i class="fas fa-star text-primary"></i>
@@ -256,7 +257,7 @@
                                 </div>
                                 <h4 class="mb-3">3.12 $</h4>
                                 <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
-                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                    class="add_to_carti btn border border-secondary rounded-pill px-3 text-primary"><i
                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                             </div>
                         </div>
@@ -269,7 +270,8 @@
                                 <img src="img/best-product-2.jpg" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-6">
-                                <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}" class="h5">Organic
+                                <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
+                                    class="add_to_carti h5">Organic
                                     Tomato</a>
                                 <div class="d-flex my-3">
                                     <i class="fas fa-star text-primary"></i>
@@ -280,7 +282,7 @@
                                 </div>
                                 <h4 class="mb-3">3.12 $</h4>
                                 <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
-                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                    class="add_to_carti btn border border-secondary rounded-pill px-3 text-primary"><i
                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                             </div>
                         </div>
@@ -293,7 +295,8 @@
                                 <img src="img/best-product-3.jpg" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-6">
-                                <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}" class="h5">Organic
+                                <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
+                                    class="add_to_carti h5">Organic
                                     Tomato</a>
                                 <div class="d-flex my-3">
                                     <i class="fas fa-star text-primary"></i>
@@ -304,7 +307,7 @@
                                 </div>
                                 <h4 class="mb-3">3.12 $</h4>
                                 <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
-                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                    class="add_to_carti btn border border-secondary rounded-pill px-3 text-primary"><i
                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                             </div>
                         </div>
@@ -317,7 +320,8 @@
                                 <img src="img/best-product-4.jpg" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-6">
-                                <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}" class="h5">Organic
+                                <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
+                                    class="add_to_carti h5">Organic
                                     Tomato</a>
                                 <div class="d-flex my-3">
                                     <i class="fas fa-star text-primary"></i>
@@ -328,7 +332,7 @@
                                 </div>
                                 <h4 class="mb-3">3.12 $</h4>
                                 <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
-                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                    class="add_to_carti btn border border-secondary rounded-pill px-3 text-primary"><i
                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                             </div>
                         </div>
@@ -341,7 +345,8 @@
                                 <img src="img/best-product-5.jpg" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-6">
-                                <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}" class="h5">Organic
+                                <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
+                                    class="add_to_carti h5">Organic
                                     Tomato</a>
                                 <div class="d-flex my-3">
                                     <i class="fas fa-star text-primary"></i>
@@ -352,7 +357,7 @@
                                 </div>
                                 <h4 class="mb-3">3.12 $</h4>
                                 <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
-                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                    class="add_to_carti btn border border-secondary rounded-pill px-3 text-primary"><i
                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                             </div>
                         </div>
@@ -365,7 +370,8 @@
                                 <img src="img/best-product-6.jpg" class="img-fluid rounded-circle w-100" alt="">
                             </div>
                             <div class="col-6">
-                                <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}" class="h5">Organic
+                                <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
+                                    class="add_to_carti h5">Organic
                                     Tomato</a>
                                 <div class="d-flex my-3">
                                     <i class="fas fa-star text-primary"></i>
@@ -376,7 +382,7 @@
                                 </div>
                                 <h4 class="mb-3">3.12 $</h4>
                                 <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
-                                    class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                    class="add_to_carti btn border border-secondary rounded-pill px-3 text-primary"><i
                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                             </div>
                         </div>
@@ -386,7 +392,8 @@
                     <div class="text-center">
                         <img src="img/fruite-item-1.jpg" class="img-fluid rounded" alt="">
                         <div class="py-4">
-                            <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}" class="h5">Organic
+                            <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
+                                class="add_to_carti h5">Organic
                                 Tomato</a>
                             <div class="d-flex my-3 justify-content-center">
                                 <i class="fas fa-star text-primary"></i>
@@ -397,7 +404,7 @@
                             </div>
                             <h4 class="mb-3">3.12 $</h4>
                             <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
-                                class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                class="add_to_carti btn border border-secondary rounded-pill px-3 text-primary"><i
                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                         </div>
                     </div>
@@ -406,7 +413,8 @@
                     <div class="text-center">
                         <img src="img/fruite-item-2.jpg" class="img-fluid rounded" alt="">
                         <div class="py-4">
-                            <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}" class="h5">Organic
+                            <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
+                                class="add_to_carti h5">Organic
                                 Tomato</a>
                             <div class="d-flex my-3 justify-content-center">
                                 <i class="fas fa-star text-primary"></i>
@@ -417,7 +425,7 @@
                             </div>
                             <h4 class="mb-3">3.12 $</h4>
                             <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
-                                class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                class="add_to_carti btn border border-secondary rounded-pill px-3 text-primary"><i
                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                         </div>
                     </div>
@@ -426,7 +434,8 @@
                     <div class="text-center">
                         <img src="img/fruite-item-3.jpg" class="img-fluid rounded" alt="">
                         <div class="py-4">
-                            <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}" class="h5">Organic
+                            <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
+                                class="add_to_carti h5">Organic
                                 Tomato</a>
                             <div class="d-flex my-3 justify-content-center">
                                 <i class="fas fa-star text-primary"></i>
@@ -437,7 +446,7 @@
                             </div>
                             <h4 class="mb-3">3.12 $</h4>
                             <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
-                                class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                class="add_to_carti btn border border-secondary rounded-pill px-3 text-primary"><i
                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                         </div>
                     </div>
@@ -446,7 +455,8 @@
                     <div class="text-center">
                         <img src="img/fruite-item-4.jpg" class="img-fluid rounded" alt="">
                         <div class="py-2">
-                            <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}" class="h5">Organic
+                            <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
+                                class="add_to_carti h5">Organic
                                 Tomato</a>
                             <div class="d-flex my-3 justify-content-center">
                                 <i class="fas fa-star text-primary"></i>
@@ -457,7 +467,7 @@
                             </div>
                             <h4 class="mb-3">3.12 $</h4>
                             <a href="{{Auth::user() ? 'javascript:void(0)' : route('admin.login')}}"
-                                class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                class="add_to_carti btn border border-secondary rounded-pill px-3 text-primary"><i
                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                         </div>
                     </div>
@@ -539,6 +549,28 @@
                 getItems();
 
             })
+
+            $(document).on("click", ".add_to_cart", function () {
+                let product_id = $(this).data("product-id")
+
+                $.ajax({
+                    url: "{{route('addtocart')}}",
+                    type: "Post",
+                    data: {
+                        _token: "{{csrf_token()}}",
+                        product_id: product_id,
+                    },
+                    success: function (response) {
+                        // $('.cart_cont').html(response.count);
+                        $(document).find('.cart_cont').text(response.count)
+                        toastr.success(response.message)
+                    }
+                })
+            })
+
+
+
+
         });
     </script>
 @endpush
