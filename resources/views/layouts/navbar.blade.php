@@ -1,9 +1,16 @@
 <!-- Navbar start -->
 
-@php
-    use App\Models\Cart;
-    $count = Cart::where('user_id', Auth::user()->id)->count();
-@endphp
+@auth
+    @php
+        $count = App\Models\Cart::where('user_id', auth()->id())->count();
+    @endphp
+@else
+    @php
+        $count = 0;
+    @endphp
+@endauth
+
+
 
 
 <div class="container-fluid fixed-top">
@@ -50,7 +57,7 @@
                     <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4"
                         data-bs-toggle="modal" data-bs-target="#searchModal"><i
                             class="fas fa-search text-primary"></i></button>
-                    <a href="#" class="position-relative me-4 my-auto">
+                    <a href="{{route('cart')}}" class="position-relative me-4 my-auto">
                         <i class="fa fa-shopping-bag fa-2x"></i>
                         <span
                             class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1 cart_cont"

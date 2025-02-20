@@ -33,19 +33,19 @@
                     <tbody>
                         @foreach ($items as $item)
                             <tr>
-                                <th scope="row">
+                                <td scope="row">
                                     <div class="d-flex align-items-center">
                                         <img src="{{asset($item->product->images)}}" class="img-fluid me-5 rounded-circle"
                                             style="width: 80px; height: 80px; object-fit: cover;" alt="">
                                     </div>
-                                </th>
+                                </td>
                                 <td>
                                     <p class="mb-0 mt-4">{{$item->product->title}}</p>
                                 </td>
                                 <td>
-                                    <p class="mb-0 mt-4">{{$item->product->price}} $</p>
+                                    <p class="mb-0 mt-4 price">{{$item->product->price}} $</p>
                                 </td>
-                                <td data-="">
+                                <td data-cart_id="{{$item->id}}" data-price="{{$item->product->price}}">
                                     <div class="input-group quantity mt-4" style="width: 100px;">
                                         <div class="input-group-btn">
                                             <button
@@ -53,7 +53,7 @@
                                                 <i class="fa fa-minus"></i>
                                             </button>
                                         </div>
-                                        <input type="text" class="form-control form-control-sm text-center border-0"
+                                        <input type="text" class="form-control form-control-sm text-center border-0" name="qty"
                                             value="{{$item->quantity}}">
                                         <div class="input-group-btn">
                                             <button class="btn btn-sm btn-plus rounded-circle bg-light border cart-plush-minus">
@@ -63,11 +63,11 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <p class="mb-0 mt-4">{{$item->quantity * $item->product->price}} $</p>
+                                    <p class="mb-0 mt-4 total_price">{{$item->quantity * $item->product->price}} $</p>
                                 </td>
-                                <td>
+                                <td data-cart_id="{{$item->id}}">
                                     <button class="btn btn-md rounded-circle bg-light border mt-4">
-                                        <i class="fa fa-times text-danger"></i>
+                                        <i class="fa fa-times text-danger remove-cart-item"></i>
                                     </button>
                                 </td>
 
@@ -103,8 +103,9 @@
                             <h5 class="mb-0 ps-4 me-4">Total</h5>
                             <p class="mb-0 pe-4">$99.00</p>
                         </div>
-                        <button class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4"
-                            type="button">Proceed Checkout</button>
+                        <a href="{{route('checkout')}}"
+                            class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4">Proceed
+                            Checkout</a>
                     </div>
                 </div>
             </div>
@@ -119,24 +120,38 @@
     <script>
         $(document).ready(function () {
             $(document).on("click", ".cart-plush-minus", function () {
-
-
-
+                newVal = $(this).closest('td').find('input[name="qty"]').val()
+                cart_id = $(this).closest('td').data('cart_id')
+                price = $(this).closest('td').data('price')
+                var total_price = price * newVal
+                $(this).closest('tr').find('.total_price').html((total_price).toFixed(2) + " $")
                 $.ajax({
                     url: "{{route('cart.update')}}",
                     type: "Post",
                     data: {
                         _token: "{{csrf_token()}}",
-                        product_id: product_id,
+                        qty: newVal,
+                        cart_id
                     },
-                    success: function (response) {
-                        // $('.cart_cont').html(response.count);
-                        $(document).find('.cart_cont').text(response.count)
-                        toastr.success(response.message)
-                    }
                 })
             })
 
+            $(document).on("click", ".remove-cart-item", function () {
+
+                cart_id = $(this).closest('td').data('cart_id')
+                hideTr = $(this).closest('tr');
+                $.ajax({
+                    url: "{{route('cart.itemRemove')}}",
+                    type: "Post",
+                    data: {
+                        _token: "{{csrf_token()}}",
+                        cart_id
+                    },
+                    success: function () {
+                        hideTr.hide();
+                    }
+                })
+            })
         });
     </script>
 @endpush

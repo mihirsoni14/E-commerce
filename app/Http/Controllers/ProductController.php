@@ -17,8 +17,6 @@ class ProductController extends Controller
         $products = Product::paginate(5);
         return view('admin-panel.product.list', compact('products'));
     }
-
-
     public function create()
     {
         $subCategory = SubCategory::all();
@@ -78,10 +76,32 @@ class ProductController extends Controller
         $items = Cart::where('user_id', Auth::id())->get();
         return view('cart', compact('items'));
     }
-    public function cartUpdate()
+    public function cartUpdate(Request $request)
     {
-
+        Cart::where('id', $request->cart_id)->update([
+            'quantity' => $request->qty,
+        ]);
+        $data = Cart::with('product')->find($request->cart_id);
+        return $data;
     }
+
+    public function removeItemFromCart(Request $request)
+    {
+        $item = Cart::find($request->cart_id);
+        $item->delete();
+    }
+    public function checkout(Request $request)
+    {
+        $items = Cart::where('user_id', Auth::id())->get();
+        return view('checkout', compact('items'));
+    }
+    public function orderProccess(Request $request)
+    {
+        return $request->all();
+    }
+
+
+
 
 
 }

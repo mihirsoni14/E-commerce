@@ -11,9 +11,6 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/shop', [HomeController::class, 'shop'])->name('shop');
 
 
-Route::get('/checkout', function () {
-    return view('checkout');
-})->name('checkout');
 
 Route::get('/testimonial', function () {
     return view('testimonial');
@@ -57,12 +54,17 @@ Route::middleware(AuthMiddleware::class)->group(function () {
     })->name('login');
 
     Route::get('/cart', [ProductController::class, 'cart'])->name('cart');
-    Route::get('/cartupdate', [ProductController::class, 'cartUpdate'])->name('cart.update');
+    Route::post('/cartupdate', [ProductController::class, 'cartUpdate'])->name('cart.update');
+    Route::post('/cartItemRemove', [ProductController::class, 'removeItemFromCart'])->name('cart.itemRemove');
     Route::get('users/list', [UserController::class, 'index'])->name('users.list');
     Route::get('product/list', [ProductController::class, 'index'])->name('product.list');
     Route::get('product/create', [ProductController::class, 'create'])->name('product.create');
     Route::post('product/store', [ProductController::class, 'store'])->name('product.store');
     Route::post('product/addToCart', [ProductController::class, 'addtocart'])->name('addtocart');
+    Route::get('/checkout', [ProductController::class, 'checkout'])->name('checkout');
+    Route::get('/order', [ProductController::class, 'proceed_checkout'])->name('proceed_checkout');
+    Route::get('/orderProccess', [ProductController::class, 'orderProccess'])->name('orderProccess');
+
 
 });
 
