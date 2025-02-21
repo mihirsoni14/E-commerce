@@ -5,9 +5,6 @@
         </div>
 
         <div class="clearfix"></div>
-
-
-
         <br />
 
         <!-- sidebar menu -->
@@ -24,10 +21,11 @@
                             <li><a href="{{route('product.list')}}">List</a></li>
                         </ul>
                     </li>
+                    <li><a href="{{route('users.order')}}"><i class="fa fa-product-hunt"></i> Order <span
+                                class="fa fa-chevron-down"></span></a></li>
 
                 </ul>
             </div>
-
 
         </div>
         <!-- /sidebar menu -->

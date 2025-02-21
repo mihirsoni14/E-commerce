@@ -95,10 +95,7 @@ class ProductController extends Controller
         $items = Cart::where('user_id', Auth::id())->get();
         return view('checkout', compact('items'));
     }
-    public function orderProccess(Request $request)
-    {
-        return $request->all();
-    }
+
 
 
 

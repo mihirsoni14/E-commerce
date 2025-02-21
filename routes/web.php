@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\AuthMiddleware;
@@ -63,7 +64,8 @@ Route::middleware(AuthMiddleware::class)->group(function () {
     Route::post('product/addToCart', [ProductController::class, 'addtocart'])->name('addtocart');
     Route::get('/checkout', [ProductController::class, 'checkout'])->name('checkout');
     Route::get('/order', [ProductController::class, 'proceed_checkout'])->name('proceed_checkout');
-    Route::get('/orderProccess', [ProductController::class, 'orderProccess'])->name('orderProccess');
+    Route::get('/orderProccess', [OrderController::class, 'store'])->name('order.store');
+    Route::get('/OrderList', [OrderController::class, 'index'])->name('users.order');
 
 
 });

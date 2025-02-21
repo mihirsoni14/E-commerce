@@ -17,7 +17,12 @@
     <div class="container-fluid py-5">
         <div class="container py-5">
             <h1 class="mb-4">Billing details</h1>
-            <form action="{{route('orderProccess')}}" method="get">
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            @endif
+            <form action="{{route('order.store')}}" method="get">
                 @csrf
                 <div class="row g-5">
                     <div class="col-md-12 col-lg-6 col-xl-7">
@@ -63,8 +68,6 @@
                             <label class="form-label my-3">Email Address<sup>*</sup></label>
                             <input type="email" name="email" class="form-control">
                         </div>
-
-
                     </div>
                     <div class="col-md-12 col-lg-6 col-xl-5">
                         <div class="table-responsive">
