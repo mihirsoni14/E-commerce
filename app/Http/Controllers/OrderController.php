@@ -8,6 +8,7 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Session\Store;
 use Illuminate\Support\Facades\Auth;
+use LDAP\Result;
 
 class OrderController extends Controller
 {
@@ -19,7 +20,6 @@ class OrderController extends Controller
     {
         $cart_id = [];
         $cart_item = Cart::where('user_id', Auth::id())->get();
-        $address = Address::where('user_id', Auth::id())->get();
 
         $validation = $request->validate([
             'first_name' => 'required|string',
@@ -37,15 +37,15 @@ class OrderController extends Controller
         foreach ($cart_item as $cart) {
             $cart_id[] = $cart->id;
         }
-
-        Order::created([
+        $address = Address::where('user_id', Auth::id())->first();
+        Order::create([
             'user_id' => Auth::id(),
-            'cart_id' => $cart_id,
-
+            'cart_id' => serialize($cart_id),
+            'address_id' => $address->id,
+            'amount' => '00.00'
         ]);
 
-        return $cart_id;
-        // return "Test";
-
+        Cart::whereIn('id', $cart_id)->delete();
+        return redirect()->route('index')->with('success', 'Order placed successfully');
     }
 }
